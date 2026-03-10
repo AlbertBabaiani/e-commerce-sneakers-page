@@ -1,3 +1,7 @@
+:host {
+  padding: 2.4rem 2.4rem 3rem;
+}
+
 .company-name {
   text-transform: uppercase;
 
@@ -23,3 +27,47 @@ h1 {
 
   margin-block: 1.5rem 2.4rem;
 }
+
+// Price Start
+
+.price-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.current-price-row {
+  display: flex;
+  align-items: center;
+
+  gap: 1.6rem;
+}
+
+.current-price {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.discount-badge {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--primary);
+
+  display: flex;
+  padding: 0.8rem;
+  background-color: var(--secondary);
+  border-radius: 0.6rem;
+}
+
+.original-price {
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.63;
+  text-align: left;
+  color: var(--text-crossed);
+  text-decoration: line-through;
+}
+
+// Price End
