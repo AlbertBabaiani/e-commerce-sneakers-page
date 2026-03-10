@@ -72,6 +72,12 @@ h1 {
 
 // Price End
 
+.add-to-cart-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
 // Quantity Start
 
 .quantity-selector {
@@ -101,16 +107,17 @@ h1 {
     outline 0.2s,
     filter 0.2s;
 
-  &:hover {
+  &:not(&:disabled):hover {
     opacity: 0.6;
   }
 
   &:focus-visible {
-    outline: 2px solid var(--primary);
+    outline-width: 2px;
   }
 
   &:disabled {
     filter: grayscale(0.7);
+    cursor: not-allowed;
   }
 }
 
@@ -120,3 +127,43 @@ h1 {
 }
 
 // Quantity End
+
+.add-to-cart-btn {
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--primary);
+  width: 100%;
+  padding-block: 2rem;
+
+  box-shadow: 0 2rem 5rem -2rem #ff7e1b;
+
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--white);
+
+  cursor: pointer;
+
+  outline: 0px solid var(--primary);
+  outline-offset: 6px;
+
+  transition:
+    opacity 0.2s,
+    outline 0.2s;
+
+  img {
+    filter: brightness(100);
+  }
+
+  &:not(&:disabled):hover {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    outline-width: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

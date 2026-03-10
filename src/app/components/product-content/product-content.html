@@ -25,25 +25,32 @@
   }
 </div>
 
-<div class="quantity-selector">
-  <button
-    type="button"
-    (click)="minusQuantity()"
-    [disabled]="selected_quantity() <= 0"
-    class="quantity-btn minus"
-    aria-label="Decrease quantity"
-  >
-    <img src="assets/images/shared/icon-minus.svg" alt="Minus icon" />
-  </button>
+<div class="add-to-cart-wrapper">
+  <div class="quantity-selector">
+    <button
+      type="button"
+      (click)="minusQuantity()"
+      [disabled]="selected_quantity() <= 0"
+      class="quantity-btn minus"
+      aria-label="Decrease quantity"
+    >
+      <img src="assets/images/shared/icon-minus.svg" alt="Minus icon" />
+    </button>
 
-  <span class="quantity"> {{ selected_quantity() }} </span>
+    <span class="quantity"> {{ selected_quantity() }} </span>
 
-  <button
-    type="button"
-    (click)="plusQuantity()"
-    class="quantity-btn plus"
-    aria-label="Increase quantity"
-  >
-    <img src="assets/images/shared/icon-plus.svg" alt="Plus icon" />
+    <button
+      type="button"
+      (click)="plusQuantity()"
+      class="quantity-btn plus"
+      aria-label="Increase quantity"
+    >
+      <img src="assets/images/shared/icon-plus.svg" alt="Plus icon" />
+    </button>
+  </div>
+
+  <button type="button" class="add-to-cart-btn" [disabled]="!selected_quantity()">
+    <img src="assets/images/shared/icon-cart.svg" alt="Add to cart" />
+    Add to cart
   </button>
 </div>
