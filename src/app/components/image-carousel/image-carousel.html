@@ -1,13 +1,24 @@
 <div class="showcase-img">
-  <picture>
-    <img [src]="imgUrl()" alt="Sneakers Image 1" />
-  </picture>
+  <img [src]="currentImgUrl()" [alt]="product().name + ' Image ' + (currentSlideIndex() + 1)" />
 
   <button type="button" (click)="previous()" class="showcase-btn previous">
-    <img src="assets/images/shared/icon-previous.svg" alt="Previous button" />
+    <img src="assets/images/shared/icon-previous.svg" alt="Previous image" />
   </button>
 
   <button type="button" (click)="next()" class="showcase-btn next">
-    <img src="assets/images/shared/icon-next.svg" alt="Next button" />
+    <img src="assets/images/shared/icon-next.svg" alt="Next image" />
   </button>
+</div>
+
+<div class="img-carousel">
+  @for (img of images(); track img.full; let i = $index) {
+    <button
+      type="button"
+      class="thumbnail-img-btn"
+      [class.selected]="i === currentSlideIndex()"
+      (click)="setImageSlide(i)"
+    >
+      <img [src]="img.thumb" [alt]="product().name + ' Thumbnail ' + (i + 1)" />
+    </button>
+  }
 </div>

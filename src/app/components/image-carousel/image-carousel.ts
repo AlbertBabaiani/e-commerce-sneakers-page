@@ -1,4 +1,5 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
+import { Product } from '../../shared/productModel';
 
 @Component({
   selector: 'section[app-image-carousel]',
@@ -7,21 +8,32 @@ import { Component, computed, signal } from '@angular/core';
   styleUrl: './image-carousel.scss',
 })
 export class ImageCarousel {
-  private productImgSlide = signal<number>(1);
+  product = input.required<Product>();
 
-  private maxQuantity = 4;
+  currentSlideIndex = signal<number>(0);
 
-  imgUrl = computed(
-    () => `assets/images/products/product-1/image-product-${this.productImgSlide()}.jpg`,
-  );
+  images = computed(() => {
+    return this.product().imgUrls.map((url) => {
+      const lastDotIndex = url.lastIndexOf('.');
+      const thumbUrl = `${url.substring(0, lastDotIndex)}-thumbnail${url.substring(lastDotIndex)}`;
+
+      return { full: url, thumb: thumbUrl };
+    });
+  });
+
+  currentImgUrl = computed(() => this.images()[this.currentSlideIndex()].full);
 
   previous(): void {
-    if (this.productImgSlide() === 1) this.productImgSlide.set(this.maxQuantity);
-    else this.productImgSlide.set(this.productImgSlide() - 1);
+    this.currentSlideIndex.update((index) => (index === 0 ? this.images().length - 1 : index - 1));
   }
 
   next(): void {
-    if (this.productImgSlide() === this.maxQuantity) this.productImgSlide.set(1);
-    else this.productImgSlide.set(this.productImgSlide() + 1);
+    this.currentSlideIndex.update((index) => (index === this.images().length - 1 ? 0 : index + 1));
+  }
+
+  setImageSlide(index: number) {
+    if (index >= 0 && index < this.images().length) {
+      this.currentSlideIndex.set(index);
+    }
   }
 }
