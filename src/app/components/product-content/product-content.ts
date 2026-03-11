@@ -24,4 +24,6 @@ export class ProductContent {
     this.selected_quantity.update((q) => q + 1);
   }
   // Quantity End
+
+  // Todo: Not available
 }
