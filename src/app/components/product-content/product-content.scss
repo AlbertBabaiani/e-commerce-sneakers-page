@@ -116,7 +116,7 @@ h1 {
   }
 
   &:disabled {
-    filter: grayscale(0.7);
+    filter: grayscale(1);
     cursor: not-allowed;
   }
 }
