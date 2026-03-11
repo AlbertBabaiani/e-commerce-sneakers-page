@@ -1,5 +1,5 @@
 import { TitleCasePipe } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -16,4 +16,8 @@ export class Navbar {
   toggleNavBar(): void {
     this.isOpened.update((v) => !v);
   }
+
+  cartQuantity = input.required<number>();
+
+  toggleCart = output<void>();
 }

@@ -1,7 +1,19 @@
-<header app-navbar></header>
+<header
+  app-navbar
+  [cartQuantity]="selectedProductsQuantity()"
+  (toggleCart)="toggleCartView()"
+></header>
 
 <main>
   <section app-image-carousel></section>
 
-  <section app-product-content></section>
+  <section
+    app-product-content
+    [product]="selectedProduct()"
+    (newProduct)="addProduct($event)"
+  ></section>
+
+  @if (cartShowed()) {
+    <app-cart [cart]="cart()" (deleteProduct)="deleteProduct($event)" />
+  }
 </main>

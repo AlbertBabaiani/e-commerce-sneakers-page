@@ -21,10 +21,13 @@ button {
 }
 
 button,
-.profile {
+.profile,
+.logo {
   transition:
     outline 0.2s,
-    filter 0.2s;
+    filter 0.2s,
+    opacity 0.2s;
+
   outline: 0px solid var(--primary);
 
   &:focus-visible {
@@ -45,6 +48,31 @@ a {
   gap: 2.2rem;
 }
 
+.cart {
+  position: relative;
+  filter: unset !important;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.cart-quantity {
+  content: '';
+  position: absolute;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.2rem 0.7rem;
+  border-radius: 100vmax;
+
+  top: 0;
+  left: 50%;
+  transform: translateY(-30%);
+
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 .profile {
   text-decoration: none;
   display: flex;
@@ -55,7 +83,8 @@ a {
 
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
     outline-width: 3px;
   }
 

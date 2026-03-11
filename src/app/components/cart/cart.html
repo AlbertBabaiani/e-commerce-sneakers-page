@@ -1,0 +1,33 @@
+<header>
+  <h2>Cart</h2>
+</header>
+
+<section class="content" [class.empty]="!products().length">
+  @if (products().length) {
+    <ul>
+      @for (product of products(); track `${product.id}-${$index}`) {
+        <li class="product">
+          <img [src]="product.imgUrl" alt="Product Image" class="img-thumbnail" />
+
+          <p class="product-info">
+            {{ product.name | titlecase }} <br />
+            {{ product.price | currency }} x {{ product.quantity }}
+            <span class="total-price">{{ product.totalPrice | currency }}</span>
+          </p>
+
+          <button
+            (click)="deleteProduct.emit({ productId: product.id, quantity: product.quantity })"
+            type="button"
+            class="delete-btn"
+          >
+            <img src="assets/images/shared/icon-delete.svg" alt="Delete Icon" />
+          </button>
+        </li>
+      }
+    </ul>
+
+    <a routerLink="" class="checkout-btn">Checkout</a>
+  } @else {
+    <h3 class="empty-cart-message">Your cart is empty.</h3>
+  }
+</section>

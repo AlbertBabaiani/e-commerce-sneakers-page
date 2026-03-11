@@ -1,26 +1,27 @@
-<span class="company-name">SNEAKER COMPANY</span>
+<span class="company-name">{{ product().companyName }}</span>
 
-<h1>Fall Limited Edition Sneakers</h1>
+<h1>{{ product().name | titlecase }}</h1>
 
 <p class="description">
-  These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber
-  outer sole, they’ll withstand everything the weather can offer.
+  {{ product().description }}
 </p>
 
 <div class="price-wrapper">
   <div class="current-price-row">
-    <span class="current-price"> {{ current_price() | currency }} </span>
+    <span class="current-price">
+      {{ product().price * (1 - product().discount) | currency }}
+    </span>
 
-    @if (discount()) {
+    @if (product().discount) {
       <span class="discount-badge">
-        {{ discount() | percent }}
+        {{ product().discount | percent }}
       </span>
     }
   </div>
 
-  @if (discount()) {
+  @if (product().discount) {
     <span class="original-price">
-      {{ original_price() | currency }}
+      {{ product().price | currency }}
     </span>
   }
 </div>
@@ -42,6 +43,7 @@
     <button
       type="button"
       (click)="plusQuantity()"
+      [disabled]="selected_quantity() === product().inStock"
       class="quantity-btn plus"
       aria-label="Increase quantity"
     >
@@ -49,7 +51,12 @@
     </button>
   </div>
 
-  <button type="button" class="add-to-cart-btn" [disabled]="!selected_quantity()">
+  <button
+    type="button"
+    (click)="addProduct()"
+    class="add-to-cart-btn"
+    [disabled]="!selected_quantity()"
+  >
     <img src="assets/images/shared/icon-cart.svg" alt="Add to cart" />
     Add to cart
   </button>

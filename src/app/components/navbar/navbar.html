@@ -10,15 +10,15 @@
       <img src="assets/images/shared/logo.svg" alt="Logo" />
     </a>
 
-    <div class="links" [class.opened]="isOpened()">
+    <div class="links" [class.opened]="isOpened()" [attr.inert]="!isOpened() ? true : null">
       <button type="button" (click)="toggleNavBar()" class="close-menu-btn">
         <img src="assets/images/shared/icon-close.svg" alt="Close menu" />
       </button>
 
       <ul class="links-list">
-        @for (link of links; track $index) {
+        @for (link of links; track link) {
           <li>
-            <a [routerLink]="link" class="link">
+            <a [routerLink]="['/', link]" class="link">
               {{ link | titlecase }}
             </a>
           </li>
@@ -28,7 +28,10 @@
   </div>
 
   <div class="account">
-    <button type="button" class="cart">
+    <button type="button" class="cart" (click)="toggleCart.emit()">
+      @if (cartQuantity()) {
+        <span class="cart-quantity">{{ cartQuantity() }}</span>
+      }
       <img src="assets/images/shared/icon-cart.svg" alt="See cart" />
     </button>
 
