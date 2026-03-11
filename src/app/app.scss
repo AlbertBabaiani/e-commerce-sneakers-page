@@ -1,0 +1,26 @@
+:host {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr;
+  justify-content: center;
+  align-items: start;
+
+  @media (min-width: 1440px) {
+    align-items: center;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  max-width: 112rem;
+  width: 100%;
+
+  @media (min-width: 1440px) {
+    padding-inline: 4.7rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 12.5rem;
+  }
+}

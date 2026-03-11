@@ -73,16 +73,15 @@ h1 {
 // Price End
 
 .add-to-cart-wrapper {
-  display: flex;
-  flex-direction: column;
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1.6rem;
 }
 
 // Quantity Start
 
 .quantity-selector {
-  margin-top: 1.6rem;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -135,7 +134,7 @@ h1 {
   width: 100%;
   padding-block: 2rem;
 
-  box-shadow: 0 2rem 5rem -2rem #ff7e1b;
+  box-shadow: 0 2rem 5rem -2rem var(--primary);
 
   font-size: 1.6rem;
   font-weight: bold;
@@ -174,4 +173,54 @@ h1 {
     opacity: 0.5;
     cursor: not-allowed;
   }
+}
+
+// Desktop View
+
+@media (min-width: 1440px) {
+  :host {
+    padding: 0;
+  }
+
+  .company-name {
+    font-size: 1.3rem;
+
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    font-size: 4.4rem;
+    line-height: 1.09;
+
+    margin-top: 2.7rem;
+  }
+
+  .description {
+    font-size: 1.6rem;
+    line-height: 1.63;
+
+    margin-top: 3.2rem;
+  }
+
+  // Price Start
+
+  .price-wrapper {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  // Price End
+
+  .add-to-cart-wrapper {
+    margin-top: 3.2rem;
+    grid-template-columns: 15.7rem 1fr;
+  }
+
+  // Quantity Start
+
+  .quantity-selector {
+    height: 100%;
+  }
+
+  // Quantity End
 }
