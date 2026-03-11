@@ -1,10 +1,30 @@
+<div class="overlay" (click)="toggleNavBar()" [class.opened]="isOpened()" aria-hidden="true"></div>
+
 <nav>
   <div class="nav-left">
-    <button class="menu-btn" type="button">
+    <button class="menu-btn" (click)="toggleNavBar()" type="button">
       <img src="assets/images/shared/icon-menu.svg" alt="Toggle menu" />
     </button>
 
-    <img src="assets/images/shared/logo.svg" alt="Logo" />
+    <a routerLink="/" class="logo">
+      <img src="assets/images/shared/logo.svg" alt="Logo" />
+    </a>
+
+    <div class="links" [class.opened]="isOpened()">
+      <button type="button" (click)="toggleNavBar()" class="close-menu-btn">
+        <img src="assets/images/shared/icon-close.svg" alt="Close menu" />
+      </button>
+
+      <ul class="links-list">
+        @for (link of links; track $index) {
+          <li>
+            <a [routerLink]="link" class="link">
+              {{ link | titlecase }}
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
   </div>
 
   <div class="account">

@@ -32,6 +32,10 @@ button,
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 .menu-btn {
   margin-right: 1.6rem;
 }
@@ -62,3 +66,89 @@ button,
     object-fit: cover;
   }
 }
+
+// Links Start
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 9998;
+  background-color: #000;
+  opacity: 0;
+
+  user-select: none;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease-in-out;
+
+  &.opened {
+    user-select: all;
+    pointer-events: all;
+    opacity: 0.75;
+  }
+}
+
+.links {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform: translateX(-100%);
+
+  padding: 2.5rem;
+
+  width: 25rem;
+  height: 100vh;
+  height: 100dvh;
+
+  z-index: 9999;
+
+  background-color: var(--white);
+
+  transition: transform 0.3s ease-in-out;
+
+  &.opened {
+    transform: translateX(0);
+  }
+}
+
+.close-menu-btn {
+  margin-bottom: 5.4rem;
+  outline-color: var(--text-primary);
+}
+
+.links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.link {
+  cursor: pointer;
+
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.44;
+
+  color: var(--text-primary);
+
+  display: block;
+
+  outline: 0px solid var(--text-primary);
+  outline-offset: 6px;
+
+  transition:
+    opacity 0.2s,
+    outline 0.2s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    outline-width: 2px;
+  }
+}
+
+// Links End
