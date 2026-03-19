@@ -15,6 +15,6 @@
   ></section>
 
   @if (cartShowed()) {
-    <app-cart [cart]="cart()" (deleteProduct)="deleteProduct($event)" />
+    <app-cart [cart]="cart()" (deleteProduct)="deleteProduct($event)" class="cart" />
   }
 </main>

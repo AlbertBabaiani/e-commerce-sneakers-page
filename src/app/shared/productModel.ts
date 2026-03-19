@@ -6,7 +6,10 @@ export type Product = {
   inStock: number;
   price: number;
   discount: number;
-  imgUrls: string[];
+  images: {
+    full: string;
+    thumb: string;
+  }[];
 };
 
 export type CartItem = {

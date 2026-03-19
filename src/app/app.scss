@@ -11,19 +11,27 @@
   }
 }
 
+main,
+header {
+  @media (min-width: 1440px) {
+    max-width: 160rem;
+    width: 100%;
+  }
+}
+
 main {
   display: grid;
   grid-template-columns: 1fr;
 
-  max-width: 160rem;
-  width: 100%;
-
   @media (min-width: 1440px) {
-    padding-inline: 4.7rem;
     grid-template-columns: 1fr 1fr;
     gap: 12.5rem;
     align-items: center;
 
     height: 100%;
   }
+}
+
+.cart {
+  position: absolute;
 }

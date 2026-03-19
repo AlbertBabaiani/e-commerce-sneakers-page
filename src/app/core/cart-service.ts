@@ -8,7 +8,11 @@ const DEFAULT_IMAGES = [
   'assets/images/products/product-1/image-product-2.jpg',
   'assets/images/products/product-1/image-product-3.jpg',
   'assets/images/products/product-1/image-product-4.jpg',
-];
+].map((url) => {
+  const lastDotIndex = url.lastIndexOf('.');
+  const thumbUrl = `${url.substring(0, lastDotIndex)}-thumbnail${url.substring(lastDotIndex)}`;
+  return { full: url, thumb: thumbUrl };
+});
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +26,7 @@ export class CartService {
       description: DEFAULT_DESC,
       discount: 0.5,
       price: 250,
-      imgUrls: DEFAULT_IMAGES,
+      images: DEFAULT_IMAGES,
       inStock: 6,
     },
   ]);

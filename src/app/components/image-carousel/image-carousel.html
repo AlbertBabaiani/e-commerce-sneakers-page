@@ -11,7 +11,7 @@
 </div>
 
 <div class="img-carousel">
-  @for (img of images(); track img.full; let i = $index) {
+  @for (img of product().images; track img.full; let i = $index) {
     <button
       type="button"
       class="thumbnail-img-btn"

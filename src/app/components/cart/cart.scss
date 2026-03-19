@@ -13,6 +13,13 @@
   grid-template-rows: auto 1fr;
 
   box-shadow: 0 2rem 5rem -2rem rgba(29, 32, 38, 0.5);
+
+  @media (min-width: 1440px) {
+    top: 0;
+    left: 0;
+    width: 80rem;
+    transform: unset;
+  }
 }
 
 header {
@@ -113,6 +120,8 @@ ul {
   cursor: pointer;
   outline: 0px solid var(--primary);
   outline-offset: 4px;
+
+  text-decoration: none;
 
   transition:
     opacity 0.2s,
