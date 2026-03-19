@@ -13,6 +13,8 @@
 
 main,
 header {
+  max-width: 80rem;
+
   @media (min-width: 1440px) {
     max-width: 160rem;
     width: 100%;
