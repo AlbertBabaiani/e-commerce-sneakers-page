@@ -1,5 +1,11 @@
 :host {
   padding: 2.4rem 2.4rem 3rem;
+
+  // Desktop View
+
+  @media (min-width: 1440px) {
+    padding: 0;
+  }
 }
 
 .company-name {
@@ -175,13 +181,9 @@ h1 {
   }
 }
 
-// Desktop View
+// Tablet View
 
-@media (min-width: 1440px) {
-  :host {
-    padding: 0;
-  }
-
+@media (min-width: 768px) {
   .company-name {
     font-size: 1.3rem;
 
