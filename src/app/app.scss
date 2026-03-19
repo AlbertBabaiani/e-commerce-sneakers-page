@@ -24,16 +24,22 @@ header {
 main {
   display: grid;
   grid-template-columns: 1fr;
+  position: relative;
 
   @media (min-width: 1440px) {
     grid-template-columns: 1fr 1fr;
     gap: 12.5rem;
     align-items: center;
 
+    padding-inline: 2.4rem;
+
     height: 100%;
   }
 }
 
-.cart {
-  position: absolute;
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background-color: transparent;
 }

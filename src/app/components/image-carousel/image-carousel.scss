@@ -1,3 +1,9 @@
+:host {
+  @media (min-width: 1440px) {
+    padding: 4.8rem;
+  }
+}
+
 .showcase-wrapper {
   width: 100%;
   height: clamp(30rem, 80vw, 46rem);
