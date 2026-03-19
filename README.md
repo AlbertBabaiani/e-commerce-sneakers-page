@@ -1,59 +1,76 @@
-# ECommerceSneakersPage
+# 👟 Fall Sneakers | Modern E-Commerce Product Page
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.12.
+<div align="center">
 
-## Development server
+  <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="Sass" />
+  <img src="https://img.shields.io/badge/Responsive-Mobile_First-05A328?style=for-the-badge" alt="Responsive" />
 
-To start a local development server, run:
+  <br />
+  <br />
 
-```bash
-ng serve
-```
+  <a href="https://ng-sneakers-page.vercel.app/">
+    <img src="https://img.shields.io/badge/View_Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="View Live Demo" />
+  </a>
+  
+  <a href="https://github.com/AlbertBabaiani/e-commerce-sneakers-page">
+    <img src="https://img.shields.io/badge/GitHub_Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repo" />
+  </a>
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+  <a href="https://www.figma.com/design/vISpBoTcDrpvUamA4itgNk/ecommerce-product-page?node-id=0-1&p=f&t=hZfmIGrmPenG9roe-0">
+    <img src="https://img.shields.io/badge/Figma_Design_File-000000?style=for-the-badge&logo=figma&logoColor=white" alt="Figma Design" />
+  </a>
 
-## Code scaffolding
+</div>
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🚀 About The Project
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+**Fall Sneakers** is a fully responsive, interactive e-commerce product landing page designed to deliver a premium shopping experience. Designed with a meticulous mobile-first approach, it offers users a seamless flow from browsing product imagery to managing their shopping cart.
 
-```bash
-ng generate --help
-```
+Beyond a standard static layout, the application is engineered to provide a tactile and highly responsive user experience. It features hardware-accelerated image swiping, an expanding desktop lightbox modal, and an instantly updating cart state—making the entire shopping journey feel modern, fast, and intuitive.
 
-## Building
+### 🧠 Key Technical Concepts
 
-To build the project run:
+This project serves as a comprehensive showcase of modern front-end web development, utilizing the latest framework features and architectural best practices:
 
-```bash
-ng build
-```
+- **Modern Angular Reactivity:** Leverages Angular Signals (`signal`, `computed`, `input.required`, `output`) for granular, boilerplate-free state management and instant DOM updates across the application without relying on RxJS.
+- **Immutable State Architecture:** Features a dedicated `CartService` that handles complex inventory and cart calculations using strict immutable updates, guaranteeing a bug-free single source of truth.
+- **Performant CSS Animations:** Utilizes hardware-accelerated CSS properties (`transform: translateX`, `translate`) to create buttery-smooth image carousel sliding and spring-physics cart dropdown entrances.
+- **Smart Component Reusability:** Architected with modularity in mind. The complex `ImageCarousel` component seamlessly adapts its layout and functionality to act as both an inline product viewer and a floating Desktop Lightbox modal.
+- **Advanced SCSS & Accessibility:** Features a robust styling foundation using CSS Custom Properties (variables) and nested syntax. Implements strict accessibility (a11y) standards, including precise `:focus-visible` outlines and `inert` attribute handling for off-canvas mobile menus.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 📱 Visual Showcase
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+> **Note:** Because this app features rich transitions and interactive states, a live demo is highly recommended to experience the UI!
 
-```bash
-ng test
-```
+<div align="center"> 
+  <h3>Desktop Experience & Lightbox</h3>
+  <img src="src/assets/previews/desktop-preview.png" alt="Desktop Interface showing the Sneaker Page" width="800" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
+</div>
 
-## Running end-to-end tests
+<br/>
 
-For end-to-end (e2e) testing, run:
+<div align="center" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+  <div>
+    <h3>Cart Interactions</h3>
+    <img src="src/assets/previews/tablet-cart-preview.png" alt="Active Cart Dropdown Interface" width="450" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
+  </div>
+  <div>
+    <h3>Mobile View & Nav</h3>
+    <img src="src/assets/previews/mobile-preview.png" alt="Mobile Interface with Sliding Navigation" height="550" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
+  </div>
+</div>
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🛠️ Built With
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **[Angular](https://angular.dev/)** - Framework utilizing Standalone Components, Signals, and the modern Control Flow syntax (`@if`, `@for`).
+- **[TypeScript](https://www.typescriptlang.org/)** - For strict typing of the Product data models and e-commerce cart logic.
+- **[SCSS / SASS](https://sass-lang.com/)** - Utilizing scoped component styling, robust `:host` selectors, and global CSS variables.
+- **CSS Grid & Flexbox** - Creating a robust, mobile-first layout that scales elegantly to 1440px desktop screens.
