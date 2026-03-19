@@ -1,12 +1,19 @@
-<div class="showcase-img">
-  <img [src]="currentImgUrl()" [alt]="product().name + ' Image ' + (currentSlideIndex() + 1)" />
+<div class="showcase-wrapper">
+  <div
+    class="showcase-slider"
+    [style.transform]="'translateX(-' + currentSlideIndex() * 100 + '%)'"
+  >
+    @for (img of product().images; track img.full; let i = $index) {
+      <img [src]="img.full" [alt]="product().name + ' Image ' + (i + 1)" />
+    }
+  </div>
 
   <button type="button" (click)="previous()" class="showcase-btn previous">
-    <img src="assets/images/shared/icon-previous.svg" alt="Previous image" />
+    <img src="assets/images/shared/icon-previous.svg" alt="Previous" />
   </button>
 
   <button type="button" (click)="next()" class="showcase-btn next">
-    <img src="assets/images/shared/icon-next.svg" alt="Next image" />
+    <img src="assets/images/shared/icon-next.svg" alt="Next" />
   </button>
 </div>
 

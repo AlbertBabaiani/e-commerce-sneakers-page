@@ -1,14 +1,22 @@
-.showcase-img {
+.showcase-wrapper {
   width: 100%;
   height: clamp(30rem, 80vw, 46rem);
-
   position: relative;
+
+  overflow: hidden;
+}
+
+.showcase-slider {
+  display: flex;
+  height: 100%;
+
+  transition: transform 0.4s ease-in-out;
 
   img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
+    flex-shrink: 0;
   }
 }
 
@@ -58,6 +66,8 @@
     object-fit: cover;
   }
 }
+
+// The Desktop Thumbnail Grid
 
 .img-carousel {
   display: none;
@@ -120,15 +130,12 @@
   }
 }
 
-// Desktop view
+// Desktop Overrides
 
 @media (min-width: 1440px) {
-  .showcase-img {
+  .showcase-wrapper {
     height: clamp(40rem, 50vh, 70rem);
-
-    img {
-      border-radius: 1.5rem;
-    }
+    border-radius: 1.5rem;
   }
 
   .showcase-btn {
