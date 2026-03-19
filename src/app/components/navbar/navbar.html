@@ -10,7 +10,11 @@
       <img src="assets/images/shared/logo.svg" alt="Logo" />
     </a>
 
-    <div class="links" [class.opened]="isOpened()" [attr.inert]="!isOpened() ? true : null">
+    <div
+      class="links"
+      [class.opened]="isOpened()"
+      [attr.inert]="isMobile() && !isOpened() ? true : null"
+    >
       <button type="button" (click)="toggleNavBar()" class="close-menu-btn">
         <img src="assets/images/shared/icon-close.svg" alt="Close menu" />
       </button>
@@ -18,7 +22,7 @@
       <ul class="links-list">
         @for (link of links; track link) {
           <li>
-            <a [routerLink]="['/', link]" class="link">
+            <a [routerLink]="['/']" class="link" (click)="toggleNavBar()">
               {{ link | titlecase }}
             </a>
           </li>
