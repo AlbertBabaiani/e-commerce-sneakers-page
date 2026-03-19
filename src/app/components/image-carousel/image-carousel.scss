@@ -60,11 +60,15 @@
 }
 
 .img-carousel {
-  display: grid;
+  display: none;
   grid-template-columns: repeat(4, 1fr);
   gap: 3.1rem;
 
   margin-top: 3.2rem;
+
+  @media (min-width: 1440px) {
+    display: grid;
+  }
 }
 
 .thumbnail-img-btn {
@@ -120,7 +124,7 @@
 
 @media (min-width: 1440px) {
   .showcase-img {
-    height: 44.5rem;
+    height: clamp(40rem, 50vh, 70rem);
 
     img {
       border-radius: 1.5rem;
