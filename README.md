@@ -50,21 +50,29 @@ This project serves as a comprehensive showcase of modern front-end web developm
 
 <div align="center"> 
   <h3>Desktop Experience & Lightbox</h3>
-  <img src="src/assets/previews/desktop-preview.png" alt="Desktop Interface showing the Sneaker Page" width="800" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
+  <img src="src/assets/previews/desktop-preview.png" alt="Desktop Interface showing the Sneaker Page" width="800" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); margin-bottom: 20px;"/>
 </div>
 
 <br/>
 
-<div align="center" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-  <div>
-    <h3>Cart Interactions</h3>
-    <img src="src/assets/previews/tablet-cart-preview.png" alt="Active Cart Dropdown Interface" width="450" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
-  </div>
-  <div>
-    <h3>Mobile View & Nav</h3>
-    <img src="src/assets/previews/mobile-preview.png" alt="Mobile Interface with Sliding Navigation" height="550" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
-  </div>
+<div align="center">
+  <h3>Responsive & Mobile Views</h3>
 </div>
+
+<table align="center" style="border: none; background-color: transparent;">
+  <tr align="center">
+    <td><b>Cart Interactions</b></td>
+    <td><b>Mobile View & Nav</b></td>
+  </tr>
+  <tr align="center" valign="top">
+    <td>
+      <img src="src/assets/previews/tablet-cart-preview.png" alt="Active Cart Dropdown Interface" width="450" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
+    </td>
+    <td>
+      <img src="src/assets/previews/mobile-preview.png" alt="Mobile Interface with Sliding Navigation" width="250" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);"/>
+    </td>
+  </tr>
+</table>
 
 ---
 
